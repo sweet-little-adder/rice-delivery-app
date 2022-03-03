@@ -76,7 +76,7 @@ Open or close the lid of the robot
   - Status `200`
   - Body (empty object)
 
-#### `POST /set-lid`
+#### `POST /set-goal`
 
 Set navigation goal for the robot
 
