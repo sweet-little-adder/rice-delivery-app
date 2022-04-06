@@ -89,8 +89,8 @@ function App() {
           <>
           {
             dest.name !== 'Home' &&
-            <div className="btn" onClick={() => setgoal(dest.name)}>
-              {dest.name}
+            <div className="App" onClick={() => setgoal(dest.name)}>
+              <button className="btn">{dest.name}</button>
             </div>
           }
           </>
