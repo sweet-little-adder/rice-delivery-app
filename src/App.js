@@ -11,7 +11,6 @@ import { useState } from "react";
 //);
 
 function App() {
-  const [count, setCount] = useState(0);
   const [destinations, setDestinations] = useState([]);
   const send = function () {
     fetch("http://localhost:3001/map-waypoints")
@@ -28,7 +27,7 @@ function App() {
     <div className="App">
       <TodoList>button</TodoList>
 
-      <button className="btn" onClick={TodoList}>
+      <button className="btn" onClick={send}>
         Open
       </button>
 
@@ -42,10 +41,7 @@ function App() {
       <br></br>
       <br></br>
       <img src={logo} className="App-logo" alt="logo" />
-      <p> {count}</p>
-      <button className="btn" onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+
       {destinations.map((destinations) => (
         <div onClick={selectDestinations}>{destinations.name}</div>
       ))}
