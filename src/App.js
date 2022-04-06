@@ -22,7 +22,7 @@ function App() {
   };
   return (
     <div className="App">
-      <button className="btn" onClick={setlid}>
+      <button className="btn" onClick={<setlid />}>
         𝓞𝓹𝓮𝓷
       </button>
       <button
