@@ -4,15 +4,18 @@
   line-height: 2em;
   letter-spacing: 0.1em;
   color: palevioletred;
+  align-content: center;
+  justify-content: center;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
-  height: 80px;
+  height: 60px;
   fill: pink;
   filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(-50deg)
     brightness(119%) contrast(119%);
-  display: none;
+  //display: none;
+  text-align: center;
 }
 
 .App-header {
@@ -26,6 +29,18 @@
   font-size: large;
 }
 
+.btn-big{
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid pink;
+  color: palevioletred;
+  margin: 1em 1em;
+  padding: 1em 3em;
+  max-width: 500px;
+  text-align: center;
+  font-size: 25px;
+}
+
 .btn {
   background: transparent;
   border-radius: 3px;
@@ -33,6 +48,10 @@
   color: palevioletred;
   margin: 1em 1em;
   padding: 0.3em 1em;
+  max-width: 250px;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {

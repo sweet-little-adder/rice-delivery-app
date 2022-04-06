@@ -155,3 +155,8 @@ Default response
   "lid": "close"
 }
 ```
+
+
+open lid
+close lid
+set destination on click
