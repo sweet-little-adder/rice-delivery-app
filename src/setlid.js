@@ -10,9 +10,7 @@ export default function () {
 
   const setlid = () => {
     axios
-      .post("http://localhost:3001/set-lid", {
-        title: lid,
-      })
+      .post("http://localhost:3001/set-lid")
       .then((res) => console.log("Posting open", res))
       .catch((err) => console.log(err));
   };
