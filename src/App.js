@@ -4,11 +4,13 @@ import "./App.css";
 //import waypoints from "./waypoints";
 import TodoList from "./todolist";
 import { useState } from "react";
-import setlid from "./setlid";
+import axios from "axios";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
   const [selectedDestination, setSelectedDestination] = useState({});
+  const [lid, setLid] = useState({});
+
   const send = function () {
     fetch("http://localhost:3001/map-waypoints")
       .then((response) => response.json())
@@ -18,11 +20,15 @@ function App() {
     setSelectedDestination(dest);
   };
   const setlid = function () {
-    <setlid />;
+    axios
+      .post("http://localhost:3001/set-lid", { lid: "open" })
+      .then((res) => console.log("Lid Open", res))
+      .catch((err) => console.log(err));
   };
+
   return (
     <div className="App">
-      <button className="btn" onClick={<setlid />}>
+      <button className="btn" onClick={setlid}>
         𝓞𝓹𝓮𝓷
       </button>
       <button
