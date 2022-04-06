@@ -21,6 +21,15 @@
   font-size: large;
 }
 
+.btn {
+  background: pink;
+  border-radius: 3px;
+  border: 2px pink;
+  color: ;
+  margin: 1em 1em;
+  padding: 0.3em 1em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
