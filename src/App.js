@@ -12,39 +12,34 @@ import { useState } from "react";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
+  const [selectedDestination, setSelectedDestination] = useState({});
   const send = function () {
     fetch("http://localhost:3001/map-waypoints")
       .then((response) => response.json())
       .then((json) => setDestinations(json));
   };
-  const selectDestinations = function () {
-    fetch("http://localhost:3001/map-waypoints")
-      .then((response) => response.json())
-      .then((json) => console.log(json));
+  const selectDestination = function (dest) {
+    setSelectedDestination(dest);
   };
-
   return (
     <div className="App">
-      <TodoList>button</TodoList>
-
       <button className="btn" onClick={send}>
-        Open
+        𝒪𝓅𝑒𝓃
       </button>
-
       <button
         className="btn"
         aria-label="clickable orange button"
         onClick={send}
       >
-        Send
+        𝒮𝑒𝓃𝒹
       </button>
       <br></br>
       <br></br>
       <img src={logo} className="App-logo" alt="logo" />
-
-      {destinations.map((destinations) => (
-        <div onClick={selectDestinations}>{destinations.name}</div>
+      {destinations.map((dest) => (
+        <div onClick={() => selectDestination(dest)}>{dest.name}</div>
       ))}
+      {selectedDestination.name}
     </div>
   );
 }
