@@ -4,11 +4,7 @@ import "./App.css";
 //import waypoints from "./waypoints";
 import TodoList from "./todolist";
 import { useState } from "react";
-//import { motion } from "framer-motion";
-
-//export const MyComponent = () => (
-//  <motion.div animate={{ rotate: 360 }} transition={{ duration: 2 }} />
-//);
+import setlid from "./setlid";
 
 function App() {
   const [destinations, setDestinations] = useState([]);
@@ -21,12 +17,12 @@ function App() {
   const selectDestination = function (dest) {
     setSelectedDestination(dest);
   };
-  const open = function () {
-    `lid`: string (`open`, `close`);
+  const setlid = function () {
+    <setlid />;
   };
   return (
     <div className="App">
-      <button className="btn" onClick={send}>
+      <button className="btn" onClick={setlid}>
         𝓞𝓹𝓮𝓷
       </button>
       <button
@@ -34,6 +30,9 @@ function App() {
         aria-label="clickable orange button"
         onClick={send}
       >
+        𝓬𝓵𝓸𝓼𝓮
+      </button>
+      <button className="btn" aria-label="clickable orange button">
         𝓬𝓵𝓸𝓼𝓮
       </button>
       <br></br>
@@ -45,6 +44,7 @@ function App() {
         </div>
       ))}
       {selectedDestination.name}
+      <setlid />
     </div>
   );
 }

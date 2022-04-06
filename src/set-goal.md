@@ -17,3 +17,20 @@ waypoint: destination,
 .catch((err) => console.log("error"));
 }, []);
 }
+
+//POST
+const open = () => {
+fetch("http://localhost:3001/set-lid", {
+method: "POST",
+headers: {
+lid: string(open, close),
+},
+body: JSON.stringify({
+lid: open,
+close,
+}),
+})
+.then((res) => res.json())
+.then((result) => setData(result.rows))
+.catch((err) => console.log("error"));
+};
