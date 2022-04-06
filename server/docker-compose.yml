@@ -1,0 +1,21 @@
+version: "3"
+services:
+  nodejs-server:
+    build:
+      context: .build
+    ports:
+      - "3333:3000"
+    container_name: node-api
+    volumes:
+      - ./api:/usr/src/app/api
+      - /usr/src/app/api/node_modules
+
+FROM node:16-stretch
+RUN npm install -g nodemon ts-node typescript
+WORKDIR /usr/src/app
+COPY ./node-express/package*.json /usr/src/app/
+RUN npm install && mv /usr/src/app/node_modules /node_modules
+COPY ./node-express /usr/src/app
+EXPOSE 5000
+ENV TZ Asia/Hong_Kong
+CMD ["nodemon","-L"]
