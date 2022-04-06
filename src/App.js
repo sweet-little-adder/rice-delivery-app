@@ -21,23 +21,28 @@ function App() {
   const selectDestination = function (dest) {
     setSelectedDestination(dest);
   };
+  const open = function () {
+    `lid`: string (`open`, `close`);
+  };
   return (
     <div className="App">
       <button className="btn" onClick={send}>
-        𝒪𝓅𝑒𝓃
+        𝓞𝓹𝓮𝓷
       </button>
       <button
         className="btn"
         aria-label="clickable orange button"
         onClick={send}
       >
-        𝒮𝑒𝓃𝒹
+        𝓬𝓵𝓸𝓼𝓮
       </button>
       <br></br>
       <br></br>
       <img src={logo} className="App-logo" alt="logo" />
       {destinations.map((dest) => (
-        <div onClick={() => selectDestination(dest)}>{dest.name}</div>
+        <div className="btn" onClick={() => selectDestination(dest)}>
+          {dest.name}
+        </div>
       ))}
       {selectedDestination.name}
     </div>
